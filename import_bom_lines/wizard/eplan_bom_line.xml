@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="elaon_bom_line_wizard_ai" model="ir.ui.view">
+            <field name="name">eplan.bom.line.form</field>
+            <field name="model">eplan.bom.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group col="4" attrs="{'invisible': [('is_product_missing','=',True)]}">
+                        <field name="csv_file"/>
+                    </group>
+                    <field name="is_product_missing" invisible="1"/>
+                    <button name="action_create_missing_product" attrs="{'invisible': [('is_product_missing','=',False)]}" class="btn-primary" type="object" string="Insert missing product"/>
+                    <field name="missing_product_ids" attrs="{'invisible': [('is_product_missing','=',False)]}">
+                        <tree editable="bottom">
+                            <field name="product_code"/>
+                            <field name="description" required="True"/>
+                            <field name="categ_id" required="True"/>
+                            <field name="can_be_sold"/>
+                            <field name="type"/>
+                            <field name="eplan_bom_id" invisible="1"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="import_bom_line" attrs="{'invisible': [('is_product_missing','=',True)]}" class="btn-primary" type="object" string="Confirm"/>
+                        <button string="Cancel" class="btn btn-primary" special="cancel" attrs="{'invisible': [('is_product_missing','=',True)]}"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

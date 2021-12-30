@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="bom_confirmation_wizard_ai" model="ir.ui.view">
+            <field name="name">wiz.eplan.confirm.form</field>
+            <field name="model">wiz.eplan.confirm</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <p>Do you want to create the Product Order?</p>
+                    </group>
+                    <footer>
+                        <button name="action_create_bom_line_with_mo" class="btn-primary" type="object" string="Yes"/>
+                        <button name="action_create_bom" class="btn btn-primary" type="object" string="No"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

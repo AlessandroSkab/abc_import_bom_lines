@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eplan_bom_line,access_eplan_bom_line,model_eplan_bom_line,base.group_user,1,1,1,1
+access_eplan_missing_product,access_eplan_missing_product,model_eplan_missing_product,base.group_user,1,1,1,1
+access_wiz_eplan_confirm,access_wiz_eplan_confirm,model_wiz_eplan_confirm,base.group_user,1,1,1,1
